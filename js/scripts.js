@@ -114,19 +114,6 @@ function scrollToTop() {
 
 // scrollToTopBtn.addEventListener("click", scrollToTop)
 
-//show project modal
-$(document).ready(function(){
-  $(".related-work").click(function(){
-    $(".modal-bg").animate({top: '0'},500);
-    $(".navbar").addClass("navbar-hidden")
-    
-  });
-  $(".close").click(function(){
-    $(".modal-bg").animate({top: '-100%'},500);
-    $(".navbar").removeClass("navbar-hidden")
-  });
-
-});
 
 //theme control
 // document.getElementById("theme-switch").addEventListener("click", changeTheme);
@@ -193,14 +180,3 @@ var date = new Date();
 var year = date.getFullYear();
 document.getElementById('year').innerHTML=year;
 
-//splide
-document.addEventListener( 'DOMContentLoaded', function() {
-  var splide = new Splide( '#projects', {
-  type    : 'loop',
-  perPage : 1,
-  interval:6000,
-  autoplay: true,
-  autoWidth: true,
-  });
-  splide.mount();
-  } );
