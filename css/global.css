@@ -99,7 +99,7 @@ html{
 }
 
 .max-width{
-  
+    
     padding: 0 80px;
     margin: auto;
 }
@@ -208,7 +208,7 @@ section .title::after{
     color:rgb(188, 175, 69);
     
 }
-.btn1:hover{
+.btn:hover{
     background:rgb(188, 175, 69);
     color: black;
     cursor: pointer;

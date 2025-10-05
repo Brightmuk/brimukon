@@ -60,31 +60,19 @@ function scrollIndication() {
     var scrolled = (winScroll / height) * 100;
     document.getElementById("scroll-indicator").style.width = scrolled + "%";
   }
+
 //contact form submission
-document.querySelector('.contact-form').addEventListener('submit',submitForm);
-function submitForm(e){
-  e.preventDefault();
 
-  let name = document.querySelector('.name').value;
-  let email = document.querySelector('.email').value;
-  let message = document.querySelector('.message').value;
+  emailjs.init('0jHdK5PxXJGfy8Mtf');
 
-  Email.send({
-    Host: process.env.EMAIL_HOST,
-    Username: process.env.EMAIL_USERNAME,
-    Password: process.env.EMAIL_PASSWORD,
-    To: process.env.EMAIL_USERNAME,
-    From: email,
-    Subject: `${name} has sent you a message from the portfolio`,
-    Body: ` ${message}`,
-
-  }).then((message)=>{
-    showAlert(message);
-  }).catch((e)=>{
-    console.log(e)
-    showAlert('Your message was not sent!');
+  document.querySelector('.contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_gkvai07', 'template_aiukuk6', this)
+      .then(() => showAlert("OK"))
+      .catch((error) => showAlert('Failed to send message: ' + error));
   });
-}
+
+
 
 //show message sent alert
 function showAlert(message){
@@ -114,67 +102,6 @@ function scrollToTop() {
 
 // scrollToTopBtn.addEventListener("click", scrollToTop)
 
-
-//theme control
-// document.getElementById("theme-switch").addEventListener("click", changeTheme);
-
-function changeTheme(){
-
-var cookie = decodeURIComponent(document.cookie).split(';');
-
-var isDarkTheme = cookie.includes('darktheme');
-console.log(cookie)
-console.log(isDarkTheme);
-
-var darkThemeData = {
-  primaryTextColor: "white",
-  secondaryTextColor:"rgb(188, 175, 69)",
-  backgroundColor:"black",
-}
-
-var lightThemeData = {
-  primaryTextColor: "black",
-  secondaryTextColor:"grey",
-  backgroundColor:"#DDD1C7",
-}
-if(!isDarkTheme){
-  document.cookie = "darktheme";
-}else{
-  document.cookie = "lighttheme";
-}
-
-document.getElementById('cogs').style.backgroundColor = !isDarkTheme?darkThemeData.backgroundColor:lightThemeData.backgroundColor;
-var btns = document.getElementsByClassName("btn");
-for(var i=0;i<btns.length;i++){
-  btns[i].classList.remove(isDarkTheme?'btn-dark':'btn-light');
-  btns[i].classList.add(isDarkTheme?'btn-light':'btn-dark');
-}
-}
-
-function readTheme(){
-  var cookie = decodeURIComponent(document.cookie).split(';');
-
-  var isDarkTheme = cookie.includes('darktheme');
-
-  var darkThemeData = {
-    primaryTextColor: "white",
-    secondaryTextColor:"rgb(188, 175, 69)",
-    backgroundColor:"black",
-  }
-
-  var lightThemeData = {
-    primaryTextColor: "black",
-    secondaryTextColor:"grey",
-    backgroundColor:"#DDD1C7",
-  }
-  console.log('Going dark theme... ', isDarkTheme)
-  document.getElementById('cogs').style.backgroundColor = isDarkTheme?darkThemeData.backgroundColor:lightThemeData.backgroundColor
-  var btns = document.getElementsByClassName("btn");
-  for(var i=0;i<btns.length;i++){
-    btns[i].classList.remove(isDarkTheme?'btn-light':'btn-dark');
-    btns[i].classList.add(isDarkTheme?'btn-dark':'btn-light');
-  }
-}
 
 var date = new Date();
 var year = date.getFullYear();
