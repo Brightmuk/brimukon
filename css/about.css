@@ -6,21 +6,20 @@
     position:relative;
     background-color: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(188, 175, 69,0.5);
+    height: 100vh;
 }
 
 .about h2::after{
-    content: 'who I am';
+    content: 'who We are';
 }
 .about .about-content{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
 }
-.about .about-content .left{
-    width:55%;
-}
+
 
 .about .about-content .left img{
     height: 500px;
@@ -28,9 +27,7 @@
     object-fit: cover;
     border-radius: 5px;
 }
-.about .about-content .right{
-    width:55%;
-}
+
 .about .about-content .right .text{
    font-size: 25px;
    font-weight: 600;

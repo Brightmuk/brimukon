@@ -14,14 +14,17 @@
 }
 .contact .title::after{
     background: rgb(0, 0, 0);
-   content:'Talk to me'
+   content:'Talk to Us'
 }
 
 .contact .contacts{
     margin: 3%;
-    width: 300px;
+    width: 350px;
     font-size: 30px;
     color: rgb(77, 76, 76);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 .contact .contacts .fa{
     color: rgb(188, 175, 69);

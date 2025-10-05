@@ -75,7 +75,7 @@ html{
 }
 .navbar{
     background-image: linear-gradient(to bottom, rgb(0,0,0,0.7) , rgb(0,0,0,0));
-    padding:30px 30px;
+    padding:30px 0px;
     width: 100%;
     z-index: 1;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -93,13 +93,13 @@ html{
 }
 
 .navbar.sticky{
-    padding:10px 30px;
+    padding:10px 0px;
     z-index: 1;
-   /* background: rgb(0,0,0,0.9); */
+    background-image: linear-gradient(to bottom, rgb(0,0,0,0.8) , rgb(0,0,0,0.5));
 }
 
 .max-width{
-    max-width: 1300px;
+  
     padding: 0 80px;
     margin: auto;
 }
@@ -193,7 +193,7 @@ section .title::after{
     padding: 20px;
     align-self: center;
     font-size: 16px;
-    padding: 10px;
+    padding: 15px 30px;
     margin-top: 20px;
     transition: 0.3s ease;
     border-radius: 3px;
@@ -390,8 +390,8 @@ section .title::after{
 footer{
     border-top:1px solid rgb(48, 48, 48);
     background: rgb(20, 20, 20);
-    height:15vh;
-    color:rgb(201, 201, 201);
+    height:10vh;
+    color:rgb(255, 255, 255);
     padding-top:15px;
     padding-left: 10px;
     padding-right:10px;
@@ -494,9 +494,7 @@ footer .fa-angle-double-up{
 footer .fa-angle-double-up:hover{
     color: rgb(188, 175, 69);
 }
-footer .footer-text{
-    color: rgb(185, 184, 184);
-} 
+
 
 
  /* resposiveness styling */
